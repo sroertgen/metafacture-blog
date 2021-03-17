@@ -1,7 +1,7 @@
 {
   "name": "metafacture-blog",
   "private": true,
-  "description": "A blog about news from the toolkit metafacture",
+  "description": "A blog for the ETL toolkit Metafacture",
   "version": "0.1.0",
   "author": "metafacture",
   "bugs": {

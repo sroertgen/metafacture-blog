@@ -2,9 +2,9 @@ module.exports = {
   siteMetadata: {
     title: `Metafacture Blog`,
     author: {
-      name: `"Open Infrastructure" group of North Rhine-Westphalian Library Service Centre (hbz)`
+      name: `Open Infrastructure team of North Rhine-Westphalian Library Service Centre (hbz)`
     },
-    description: `A blog about news from the toolkit Metafacture.`,
+    description: `A blog for the ETL toolkit Metafacture.`,
     siteUrl: `http://www.metafacture.org`,
     social: {
       twitter: `metafacture`,
