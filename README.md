@@ -33,7 +33,6 @@ nvm use 15
 npm install -g gatsby-cli
 ```
 
-npm install
 
 ## Start developing
 
