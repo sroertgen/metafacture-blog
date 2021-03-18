@@ -5,7 +5,7 @@ module.exports = {
       name: `"Open Infrastructure" group of North Rhine-Westphalian Library Service Centre (hbz)`
     },
     description: `A blog about news from the toolkit Metafacture.`,
-    siteUrl: `http://www.metafacture.org`,
+    siteUrl: `http://www.blog.metafacture.org`,
     social: {
       twitter: `metafacture`,
     },
