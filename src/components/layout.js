@@ -1,12 +1,27 @@
 import * as React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 const Layout = ({ location, title, children  }) => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let header
   let footer
-
+  const data = useStaticQuery(graphql`
+    query SocialQuery {
+      site {
+        siteMetadata {
+          social {
+            twitter
+            github
+          }
+        }
+      }
+    }
+  `)
+  const social = data.site.siteMetadata?.social
 
 
   header = (
@@ -32,7 +47,13 @@ const Layout = ({ location, title, children  }) => {
       {` | `}
       <a href="http://www.metafacture.org/extensions">Extensions</a>
       {` | `}
-      <a href="https://www.github.com/metafacture">Metafacture on GitHub</a>
+      <a href={`https://twitter.com/${social?.twitter || ``}`}>
+        Twitter <FontAwesomeIcon icon={faTwitter}/>
+      </a>
+      {` | `}
+      <a href={`https://www.github.com/${social?.github || ``}`}>
+        GitHub <FontAwesomeIcon icon={faGithub} style={{ color: `#000`}}/>
+      </a>
       {` | `}
       <a href="/rss.xml">Feed</a>
     </div>
