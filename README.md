@@ -23,8 +23,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 Set default Node.js version. When nvm is installed, it does not default to a particular node version. You’ll need to install the version you want and give nvm instructions to use it. This example uses the version 10 release, but more recent version numbers can be used instead.
 
 ```
-nvm install 10
-nvm use 10
+nvm install 15
+nvm use 15
 ```
 
 ### Install gatsby
