@@ -5,12 +5,13 @@ module.exports = {
       name: `Open Infrastructure team of North Rhine-Westphalian Library Service Centre (hbz)`
     },
     description: `A blog for the ETL toolkit Metafacture.`,
-    siteUrl: `http://www.blog.metafacture.org`,
+    siteUrl: `https://metafacture.github.io/metafacture-blog/`,
     social: {
       twitter: `metafacture`,
       github: `metafacture`,
     },
   },
+  pathPrefix: "/metafacture-blog",
   plugins: [
     `gatsby-plugin-image`,
     {
