@@ -16,7 +16,8 @@ const About = ({ data, location }) => {
       <a href="https://www.dnb.de/EN/Ueber-uns/ueberUns_node.html">German National Library (DNB)</a>. 
       It's on GitHub since 2013, currently 18 contributors, 53 stars. Since 2019 Metafacture is maintained by 
       {` `}
-      <a href="https://lobid.org/team">Open Infrastructure, hbz NRW</a>, with contributions fromt he community.
+      <a href="https://lobid.org/team">Open Infrastructure, hbz NRW</a>, with contributions from the community.
+
       </p>
       <p>
       Metafacture is a toolkit for processing semi-structured data with a focus on library metadata. 
