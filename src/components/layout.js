@@ -45,8 +45,6 @@ const Layout = ({ location, title, children  }) => {
       {` | `}
       <a href="http://www.metafacture.org">Metafacture.org</a>
       {` | `}
-      <a href="http://www.metafacture.org/extensions">Extensions</a>
-      {` | `}
       <a href={`https://twitter.com/${social?.twitter || ``}`}>
         Twitter <FontAwesomeIcon icon={faTwitter}/>
       </a>
