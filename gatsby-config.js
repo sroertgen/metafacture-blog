@@ -5,7 +5,7 @@ module.exports = {
       name: `the Metafacture community`
     },
     description: `A blog for the ETL toolkit Metafacture.`,
-    siteUrl: `https://metafacture.github.io/metafacture-blog/`,
+    siteUrl: `https://blog.metafacture.org/`,
     social: {
       twitter: `metafacture`,
       github: `metafacture`,
