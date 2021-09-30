@@ -11,7 +11,6 @@ module.exports = {
       github: `metafacture`,
     },
   },
-  pathPrefix: "/metafacture-blog",
   plugins: [
     `gatsby-plugin-image`,
     {
