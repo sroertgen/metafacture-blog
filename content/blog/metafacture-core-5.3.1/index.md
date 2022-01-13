@@ -53,7 +53,7 @@ section to provide a condensed glimpse showing more real life examples.
 - Add initial CONTRIBUTING.md [#382](https://github.com/metafacture/metafacture-core/issues/382)
 - Fix insecure logging configuration [#364](https://github.com/metafacture/metafacture-core/issues/364)
 
-... and various smaller fixes and improvements (e.g. [#417](https://github.com/metafacture/metafacture-core/issues/417)
+... and various smaller fixes and improvements (e.g. [#417](https://github.com/metafacture/metafacture-core/issues/417))
 
 ### Caveats
 
