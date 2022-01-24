@@ -236,3 +236,5 @@ immediately. You will be offered to load predefined examples.
 The `playground` comes with the capability to share examples or whole complex
 workflows, with the vision to enable this as a web API for processing data without
 even installing metafacture.
+
+Watch out for updates and new blog posts!
