@@ -40,7 +40,7 @@ The site runs with:
 
 ```
 cd metafacture-blog
-npm install
+npm install # if you experience strange ERESOLVE dependecy errors, try "npm install --legacy-peer-deps gatsby"
 gatsby develop
 ```
 
