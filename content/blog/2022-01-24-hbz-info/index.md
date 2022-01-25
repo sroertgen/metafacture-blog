@@ -1,6 +1,7 @@
 ---
 title: Metafacture @ hbz
 description: "Short report about hbz-internal Metafacture event"
+date: "2022-01-24"
 authors: [{lastname: "Pohl",
            firstname: "Adrian"}]
 ---
