@@ -8,8 +8,8 @@ authors: [{lastname: "Christoph",
 
 *Preamble*
 
-This post describes the new developements in `metafacture-core release 5.3.2` since the release
-of [metafacture-core-5.3.1 in January 2022](https://blog.metafacture.org/metafacture-core-5.3.1/).
+This post describes the new developements in `metafacture-core release 5.3.2` since the [release
+of metafacture-core-5.3.1](https://blog.metafacture.org/metafacture-core-5.3.1/) in January 2022.
 
 ## Table of Contents
 
