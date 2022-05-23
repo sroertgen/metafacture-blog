@@ -7,6 +7,7 @@ module.exports = {
     description: `A blog for the ETL toolkit Metafacture.`,
     siteUrl: `https://blog.metafacture.org/`,
     social: {
+      mastodon: `metafacture`,
       twitter: `metafacture`,
       github: `metafacture`,
     },
