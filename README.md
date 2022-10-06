@@ -1,6 +1,7 @@
 # Metafacture Blog
 
-This project is the source for the new metafacture blog.
+This project is the source for the [metafacture blog](https://blog.metafacture.org/).
+
 This project was created with the gatsby template [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog).
 
 ## Installation
