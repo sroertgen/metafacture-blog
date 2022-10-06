@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-post-js",
+    "path": "/hello-world/",
+    "result": {"data":{"site":{"siteMetadata":{"title":"Metafacture Blog"}},"markdownRemark":{"id":"c6de028e-194d-5109-802b-3d7893d4fc9b","excerpt":"Hello, World!","html":"<p>Hello, World!</p>","frontmatter":{"title":"Hello World","date":"November 22, 2021","authors":[{"lastname":"Christoph","firstname":"Pascal"}],"description":"Hello World"}},"previous":null,"next":{"fields":{"slug":"/metafacture-core-5.3.1/"},"frontmatter":{"title":"Metafacture-core release 5.3.1"}}},"pageContext":{"id":"c6de028e-194d-5109-802b-3d7893d4fc9b","previousPostId":null,"nextPostId":"88723931-08af-571f-b6e6-95c401535797"}},
+    "staticQueryHashes": ["2841359383","3660548064","692268856"]}

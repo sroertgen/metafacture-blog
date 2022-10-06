@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Metafacture Blog]]></title><description><![CDATA[A blog for the ETL toolkit Metafacture.]]></description><link>https://blog.metafacture.org</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 06 Oct 2022 14:51:11 GMT</lastBuildDate><item><title><![CDATA[Metafacture-core release 5.4.0]]></title><description><![CDATA[Preamble This post describes the new developements in  since the release
+of metafacture-core-5.3.2 in May 2022. Table of Contents Changes…]]></description><link>https://blog.metafacture.org/metafacture-core-5.4.0/</link><guid isPermaLink="false">https://blog.metafacture.org/metafacture-core-5.4.0/</guid><pubDate>Tue, 04 Oct 2022 16:34:03 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;Preamble&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This post describes the new developements in &lt;code class=&quot;language-text&quot;&gt;metafacture-core release 5.4.0&lt;/code&gt; since the &lt;a href=&quot;https://blog.metafacture.org/metafacture-core-5.3.2/&quot;&gt;release
+of metafacture-core-5.3.2&lt;/a&gt; in May 2022.&lt;/p&gt;
+&lt;h2 id=&quot;table-of-contents&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#table-of-contents&quot; aria-label=&quot;table of contents permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Table of Contents&lt;/h2&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#changes&quot;&gt;Changes&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#new-features&quot;&gt;New Features&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#other&quot;&gt;Other&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;changes&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#changes&quot; aria-label=&quot;changes permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Changes&lt;/h2&gt;
+&lt;h3 id=&quot;new-features&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#new-features&quot; aria-label=&quot;new features permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;New Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;HTTP: Enable other methods to HttpOpener than just GET - i.e. DELETE, HEAD, OPTIONS, POST, PUT and TRACE &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/463&quot;&gt;#463&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;HTTP: Enable generic header support in HttpOpener &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/456&quot;&gt;#456&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;File: Add support for compressed files as FileMap input &lt;a href=&quot;https://github.com/metafacture/metafacture-core/pull/455&quot;&gt;#455&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;JSON: Implement JSON booleans and numbers &lt;a href=&quot;https://github.com/metafacture/metafacture-core/pull/458&quot;&gt;#458&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Have a look at &lt;a href=&quot;https://github.com/metafacture/metafacture-documentation/blob/master/flux-commands.md&quot;&gt;flux-commands&lt;/a&gt; how to use these features.&lt;/p&gt;
+&lt;h3 id=&quot;other&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#other&quot; aria-label=&quot;other permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Update OAI-PMH harvester library &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/360&quot;&gt;#360&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;”./gradlew fluxCommands” to see the currently available options &lt;a href=&quot;https://github.com/metafacture/metafacture-core/commit/743e90e54d5f63e3a4209e1afe248456d763d0d7&quot;&gt;(743e90e)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;… and various smaller fixes and improvements (e.g. Mark deprecated Flux command options in help output &lt;a href=&quot;https://github.com/metafacture/metafacture-core/pull/451&quot;&gt;#451&lt;/a&gt;)&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Metafacture-core release 5.3.2]]></title><description><![CDATA[Preamble This post describes the new developements in  since the release
+of metafacture-core-5.3.1 in January 2022. Table of Contents…]]></description><link>https://blog.metafacture.org/metafacture-core-5.3.2/</link><guid isPermaLink="false">https://blog.metafacture.org/metafacture-core-5.3.2/</guid><pubDate>Fri, 20 May 2022 15:04:03 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;Preamble&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This post describes the new developements in &lt;code class=&quot;language-text&quot;&gt;metafacture-core release 5.3.2&lt;/code&gt; since the &lt;a href=&quot;https://blog.metafacture.org/metafacture-core-5.3.1/&quot;&gt;release
+of metafacture-core-5.3.1&lt;/a&gt; in January 2022.&lt;/p&gt;
+&lt;h2 id=&quot;table-of-contents&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#table-of-contents&quot; aria-label=&quot;table of contents permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Table of Contents&lt;/h2&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#changes&quot;&gt;Changes&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#bug-fixes&quot;&gt;Bug fixes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#other&quot;&gt;Other&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#caveats&quot;&gt;Caveats&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;changes&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#changes&quot; aria-label=&quot;changes permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Changes&lt;/h2&gt;
+&lt;h3 id=&quot;bug-fixes&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#bug-fixes&quot; aria-label=&quot;bug fixes permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Bug fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Strings: Call &lt;code class=&quot;language-text&quot;&gt;LineRecorder&lt;/code&gt; receiver’s &lt;code class=&quot;language-text&quot;&gt;closeStream()&lt;/code&gt; &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/433&quot;&gt;#433&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Flux: Throw &lt;code class=&quot;language-text&quot;&gt;ANTLR&lt;/code&gt; errors in &lt;code class=&quot;language-text&quot;&gt;FluxParser&lt;/code&gt; &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/421&quot;&gt;#421&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;XML/biblio: Do not trim control field values in &lt;code class=&quot;language-text&quot;&gt;MARCXML&lt;/code&gt; handler &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/440&quot;&gt;#440&lt;/a&gt; and &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/233&quot;&gt;#233&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;other&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#other&quot; aria-label=&quot;other permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Other&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Use &lt;code class=&quot;language-text&quot;&gt;protected&lt;/code&gt; on all &lt;code class=&quot;language-text&quot;&gt;on...()&lt;/code&gt; methods &lt;a href=&quot;https://github.com/metafacture/metafacture-core/pull/435&quot;&gt;#435&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;caveats&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#caveats&quot; aria-label=&quot;caveats permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Caveats&lt;/h3&gt;
+&lt;p&gt;This will occur only quite rarely:
+“Do not trim control field values in &lt;code class=&quot;language-text&quot;&gt;MARCXML&lt;/code&gt; handler (&lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/440&quot;&gt;#440&lt;/a&gt;)” breaks positional access (&lt;code class=&quot;language-text&quot;&gt;&amp;lt;substring&amp;gt;&lt;/code&gt;) to control field data elements.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For fixed-length fields with various kinds of coded information, specific data elements are positionally defined.
+(&lt;a href=&quot;https://www.loc.gov/marc/bibliographic/bd00x.html&quot;&gt;MARC 21 Bibliographic - Control Fields&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[Presentation at KIM Workshop]]></title><description><![CDATA[Last week, Adrian and Fabian of hbz’s Open Infrastrutcure team presented the ongoing Metafacture developments (Fix, Playground) at the…]]></description><link>https://blog.metafacture.org/2022-05-09-kim-workshop/</link><guid isPermaLink="false">https://blog.metafacture.org/2022-05-09-kim-workshop/</guid><pubDate>Mon, 09 May 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/38cbaeb860cca61fa2caf9a1c0016080/29114/first-slide.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.32911392405063%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB6UlEQVQoz4WSTWsTURSGpzRN0pEuglZEEKVaaltR9AeoWDvJmNRaBaWC1apVKlg1H5NM26B1U0yb9EtwpVBE6aIo6MKNLlUq6kYsRBTEhSAu9B88nrlJk0kqdPHyDvfe897nnDuaZqTQOpMoL357Qjbp+ZfMPV8i9/St6I1S9slrZp8tkbr/Ao85jHbYVbeiUtiKH0oQOH6b9/lvfPz8iV/fv5D/mufD8jK/f/7gneN//tJw7CZah0WNC6QQWE3YkcAfSWPfW8Senic2+YCRu48ZmXvEqPKHZBZe4YuMqkBV64ZSH4K+ritN+8UsLf0TNJ/L0HQ2w47+LFvOZGgdmGJT7zibT4+ztW+Cpr47tJ6fVOcc6VJbat9NWCdzqZX5BU6Mse/KDG0Xsuy+lFOX7Lk8za6BHDslaO/gDNvlQuesM8uaipbduEXVGgk8QaE+YrEhfJ31kSiN4WtKummhh1N4Q8kC1X9bds/QkKBQVKk+KG7GaexOsrHbosGMoTtrwRvosl/xuhWPohYKYcpF/lAcnyFkPcNs670lGiNw1MZrxPALZTmkmtDVahk/KYFCI/JKaPupGG0no9RJWL1c5DcT5aDOqrZX/ZglYrskX9CSsHjF2uoau0h48Cpr6sCQ+NAa52R//yD/AHlXp+PAnOFAAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Screenshot of the first presentation slide&quot;
+        title=&quot;Screenshot of the first presentation slide&quot;
+        src=&quot;/static/38cbaeb860cca61fa2caf9a1c0016080/f058b/first-slide.png&quot;
+        srcset=&quot;/static/38cbaeb860cca61fa2caf9a1c0016080/c26ae/first-slide.png 158w,
+/static/38cbaeb860cca61fa2caf9a1c0016080/6bdcf/first-slide.png 315w,
+/static/38cbaeb860cca61fa2caf9a1c0016080/f058b/first-slide.png 630w,
+/static/38cbaeb860cca61fa2caf9a1c0016080/40601/first-slide.png 945w,
+/static/38cbaeb860cca61fa2caf9a1c0016080/78612/first-slide.png 1260w,
+/static/38cbaeb860cca61fa2caf9a1c0016080/29114/first-slide.png 1920w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Last week, Adrian and Fabian of hbz’s Open Infrastrutcure team presented the ongoing Metafacture developments (Fix, Playground) at the annual workshop of the German-speaking DINI AG KIM (Competence Center for Interoperable Metadata). The slides in German can be found at &lt;a href=&quot;https://slides.lobid.org/2022-05-02-kim-ws/&quot;&gt;https://slides.lobid.org/2022-05-02-kim-ws/&lt;/a&gt;. The talk sparked some interest, especially the outlook to develop some best practices for providing an ETL hub, where people can search for data transformation processes they might reuse in their own work.&lt;/p&gt;
+&lt;p&gt;Our thanks goes to the KIM workshop organizers who created a great programme. Particularly, the new event types went really well: For one, the interactive session where people could present and discuss their tools and workflows for structuring, planning and distributing their daily work, see the &lt;a href=&quot;https://pad.gwdg.de/s/p-ZKuYh_D&quot;&gt;notes from the session&lt;/a&gt; (German). Secondly, there was the Hacky Morning where people got together in groups to try out and become familiar with the OpenAlex API (&lt;a href=&quot;https://pad.gwdg.de/s/10A5KGGCI&quot;&gt;main note pad&lt;/a&gt;). It was really fun and provided a great way to spark a community feeling which gets lost too easily when meeting online in COVID-19 times instead of having an in-person meeting.&lt;/p&gt;
+&lt;p&gt;As always, it was very nice to meet up with other metadata nerds at a KIM workshop.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Metafacture @ hbz]]></title><description><![CDATA[Last Thursday, hbz’s Open Infrastructure team presented Metafacture and its current development at an hbz-internal info event. We talked…]]></description><link>https://blog.metafacture.org/2022-01-24-hbz-info/</link><guid isPermaLink="false">https://blog.metafacture.org/2022-01-24-hbz-info/</guid><pubDate>Mon, 24 Jan 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9dcd20d36f59796a575dcddd590cf0f9/29114/first-slide.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.32911392405063%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABgElEQVQoz2NgcKv4D8eu5QjapQyCnUsh2LUMQYPEkdUim4HCAWGgYg7vmv9rj179f+Dao/+nbz39f+zG4/87L97/f/Lmk/+7Lz/4v/rQpf8cPjUQg9H1I7uOEUQ7lvznD2z8f+DMhf8HDh/8f/Hkkf8nTp34f+TE8f/XLwPFjh/7/+LN2/9cfnX/GZxKIXqQXYnuZVbPqv8CgQ3/w5sW/o9smPM/oGrG/4iGuf/D6+f8D62b/T8KyI5oWfJfMKjxP7NHJQEvO5eBDdNM7vkvHtbyXzoSiKPa/kuEt/wXB2LZ6Pb/wiHN/7l8a/+rxHeB1WJ4G2eEuFb8F/Iq+C/jk/1fzDv3vzSQBmE+z0KgukrcEYM1lqFsNq/q/7JAF4qEgVzYCnRxK1gMXR2eWC4HuwxEg1wiAHQhP5DWDiv8rxlS+J/Pq+i/IFCMx7MIRS2KS8EELgxS7FL+X8K/7L+YXymYDTcAq3ps6RAbdgHhSgLqoDHO4JD7nzo47z+DXeZ/AI6uommfClrSAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Screenshot of the first presentation slide&quot;
+        title=&quot;Screenshot of the first presentation slide&quot;
+        src=&quot;/static/9dcd20d36f59796a575dcddd590cf0f9/f058b/first-slide.png&quot;
+        srcset=&quot;/static/9dcd20d36f59796a575dcddd590cf0f9/c26ae/first-slide.png 158w,
+/static/9dcd20d36f59796a575dcddd590cf0f9/6bdcf/first-slide.png 315w,
+/static/9dcd20d36f59796a575dcddd590cf0f9/f058b/first-slide.png 630w,
+/static/9dcd20d36f59796a575dcddd590cf0f9/40601/first-slide.png 945w,
+/static/9dcd20d36f59796a575dcddd590cf0f9/78612/first-slide.png 1260w,
+/static/9dcd20d36f59796a575dcddd590cf0f9/29114/first-slide.png 1920w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Last Thursday, &lt;a href=&quot;https://lobid.org/team&quot;&gt;hbz’s Open Infrastructure team&lt;/a&gt; presented Metafacture and its current development at an hbz-internal info event. We talked about the tool, its history and its functionality. We also showed use cases and new Metafacture developments currently being worked on. The slides in German can be found at &lt;a href=&quot;https://slides.lobid.org/2022-01-metafacture-hbz/&quot;&gt;https://slides.lobid.org/2022-01-metafacture-hbz/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This talk provided a first glimpse into the power of Metafacture and will be followed up  with a hands-on workshop with all hbz-colleagues interested in using Metafacture in the future.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Metafacture-core release 5.3.1]]></title><description><![CDATA[Preamble This post describes the new developements in  since the release
+of metafacture-core-5.2.0 in April 2021.
+As the release of…]]></description><link>https://blog.metafacture.org/metafacture-core-5.3.1/</link><guid isPermaLink="false">https://blog.metafacture.org/metafacture-core-5.3.1/</guid><pubDate>Thu, 06 Jan 2022 12:09:03 GMT</pubDate><content:encoded>&lt;p&gt;&lt;em&gt;Preamble&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This post describes the new developements in &lt;code class=&quot;language-text&quot;&gt;metafacture-core release 5.3.1&lt;/code&gt; since the release
+of &lt;a href=&quot;https://github.com/metafacture/metafacture-core/releases/tag/metafacture-core-5.2.0&quot;&gt;metafacture-core-5.2.0 in April 2021&lt;/a&gt;.
+As the &lt;a href=&quot;https://github.com/metafacture/metafacture-core/releases/tag/metafacture-core-5.3.0&quot;&gt;release of metafacture-core-5.3.0&lt;/a&gt;
+comes with some &lt;a href=&quot;https://github.com/metafacture/metafacture-core/pull/429&quot;&gt;possible breaking changes&lt;/a&gt; it is recommended to stick to &lt;code class=&quot;language-text&quot;&gt;5.3.1&lt;/code&gt;.
+The intention is to provide a single paged overview of the improvements with the &lt;a href=&quot;#examples&quot;&gt;example&lt;/a&gt;
+section to provide a condensed glimpse showing more real life examples.&lt;/p&gt;
+&lt;h2 id=&quot;table-of-contents&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#table-of-contents&quot; aria-label=&quot;table of contents permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Table of Contents&lt;/h2&gt;
+&lt;div class=&quot;table-of-contents&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#changes&quot;&gt;Changes&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#bug-fixes&quot;&gt;Bug fixes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#new-features&quot;&gt;New Features&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#others&quot;&gt;Others&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#caveats&quot;&gt;Caveats&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;#examples&quot;&gt;Examples&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#encoding-marc21-xml&quot;&gt;Encoding (MARC21) XML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#encoding-json&quot;&gt;Encoding JSON&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#morph-function-setreplace-with-filemaps&quot;&gt;Morph function “setreplace” with filemaps&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#outlook&quot;&gt;Outlook&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;changes&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#changes&quot; aria-label=&quot;changes permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Changes&lt;/h2&gt;
+&lt;h3 id=&quot;bug-fixes&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#bug-fixes&quot; aria-label=&quot;bug fixes permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Bug fixes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;XML/biblio: Fix creation of Marc XML namespaces &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/403&quot;&gt;#403&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;XML/biblio: Fix Namespace-prefixes of elements and attributes &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/377&quot;&gt;#377&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;XML/biblio: Marc-XML-encoder: record-type written as controlfield not as attribut of record-field &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/402&quot;&gt;#402&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;XML/biblio: Improve handling of XML attributes and element values &lt;a href=&quot;https://github.com/metafacture/metafacture-core/pull/394&quot;&gt;#394&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;XML/biblio: Encode top-level MARC record leader as proper XML element instead of control field &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/336&quot;&gt;#336&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;XML/biblio: Make simple XML encoder value tag name configurable &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/379&quot;&gt;#379&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;JSON: Fix &lt;code class=&quot;language-text&quot;&gt;_elseNested&lt;/code&gt; loses array-key in JSON &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/374&quot;&gt;#374&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Metamorph: Fix &lt;code class=&quot;language-text&quot;&gt;_elseNested&lt;/code&gt; only outputs two hierachy levels &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/378&quot;&gt;#378&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Metamorph: Fix “setreplace” using a FileMap &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/381&quot;&gt;#381&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Metamorph: Guarantee that tests should verify that no unexpected interactions occurred &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/339&quot;&gt;#339&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;new-features&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#new-features&quot; aria-label=&quot;new features permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;New Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;JSON: Make JSON encoder array marker configurable &lt;a href=&quot;https://github.com/metafacture/metafacture-core/pull/393&quot;&gt;#393&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;JSON: Add or enhance a function to extract JSON-Records from an JSON-API &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/382&quot;&gt;#382&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mangling: Split up event stream into records &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/385&quot;&gt;#385&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Metamorph: Allow empty values in setreplace map &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/420&quot;&gt;#420&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Triples: Sort triples numerically &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/380&quot;&gt;#380&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;YAML: Add YAML Encoder/Decoder &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/399&quot;&gt;#399&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;others&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#others&quot; aria-label=&quot;others permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Others&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Update release and publish process &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/311&quot;&gt;#311&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Checkstyle and javadoc &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/&quot;&gt;#389&lt;/a&gt;389 and &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/396&quot;&gt;#396&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Update and apply EditorConfig file &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/388&quot;&gt;#388&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Add initial CONTRIBUTING.md &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/382&quot;&gt;#382&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fix insecure logging configuration &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/364&quot;&gt;#364&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;… and various smaller fixes and improvements (e.g. &lt;a href=&quot;https://github.com/metafacture/metafacture-core/issues/417&quot;&gt;#417&lt;/a&gt;)&lt;/p&gt;
+&lt;h3 id=&quot;caveats&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#caveats&quot; aria-label=&quot;caveats permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Caveats&lt;/h3&gt;
+&lt;p&gt;This will occur only quite rarely:
+If you are using a &lt;code class=&quot;language-text&quot;&gt;metamorph.xsd&lt;/code&gt; on your own and make use of &lt;code class=&quot;language-text&quot;&gt;FileMap&lt;/code&gt; you have to also update your locally &lt;code class=&quot;language-text&quot;&gt;metamorph.xsd&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;diff&quot;&gt;&lt;pre class=&quot;language-diff&quot;&gt;&lt;code class=&quot;language-diff&quot;&gt;&lt;span class=&quot;token deleted-sign deleted&quot;&gt;&lt;span class=&quot;token prefix deleted&quot;&gt;-&lt;/span&gt;      &amp;lt;attribute name=&quot;separator&quot; type=&quot;string&quot; use=&quot;optional&quot; default=&quot;\t&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;token inserted-sign inserted&quot;&gt;&lt;span class=&quot;token prefix inserted&quot;&gt;+&lt;/span&gt;      &amp;lt;attribute name=&quot;separator&quot; type=&quot;string&quot; use=&quot;optional&quot; default=&quot;&amp;amp;#09;&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;examples&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#examples&quot; aria-label=&quot;examples permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Examples&lt;/h2&gt;
+&lt;p&gt;Here are some examples that describe the former behaviour and the new changes.&lt;/p&gt;
+&lt;h3 id=&quot;encoding-marc21-xml&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#encoding-marc21-xml&quot; aria-label=&quot;encoding marc21 xml permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Encoding (MARC21) XML&lt;/h3&gt;
+&lt;p&gt;Namespace prefixes of elements and attributes in XML can now be preserved by adding
+a parameter in the flux: &lt;code class=&quot;language-text&quot;&gt;handle-generic-xml(emitnamespace=&amp;quot;true&amp;quot;)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The MARC21 XML encoding has gotten some improvements regarding the &lt;em&gt;record type&lt;/em&gt; (which
+was formerly written as a &lt;em&gt;controllfield&lt;/em&gt;). Also the output of &lt;em&gt;leader&lt;/em&gt; is now fixed.&lt;/p&gt;
+&lt;p&gt;Input:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;	&amp;lt;record xmlns=&amp;quot;http://www.loc.gov/MARC21/slim&amp;quot; type=&amp;quot;Bibliographic&amp;quot;&amp;gt;
+		&amp;lt;leader&amp;gt;00000pam a2200000 c 4500&amp;lt;/leader&amp;gt;
+		&amp;lt;marc:datafield tag=&amp;quot;856&amp;quot; ind1=&amp;quot;4&amp;quot; ind2=&amp;quot;0&amp;quot;&amp;gt;
+			&amp;lt;marc:subfield code=&amp;quot;u&amp;quot;&amp;gt;http://www.video2brain.com/&amp;lt;/mx:subfield&amp;gt;
+			&amp;lt;marc:subfield code=&amp;quot;x&amp;quot;&amp;gt;Agentur&amp;lt;/mx:subfield&amp;gt;
+		&amp;lt;/marc:datafield&amp;gt;
+	&amp;lt;/record&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;was:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;	&amp;lt;marc:record&amp;gt;
+		&amp;lt;marc:controlfield tag=&amp;quot;type&amp;quot;&amp;gt;Bibliographic&amp;lt;/marc:controlfield&amp;gt;
+		&amp;lt;marc:leader&amp;gt;00000pam a2200000 c 4500&amp;lt;/marc:leader&amp;gt;
+		&amp;lt;marc:datafield tag=&amp;quot;856&amp;quot; ind1=&amp;quot;4&amp;quot; ind2=&amp;quot;0&amp;quot;&amp;gt;
+			&amp;lt;marc:subfield code=&amp;quot;u&amp;quot;&amp;gt;http://www.video2brain.com/&amp;lt;/marc:subfield&amp;gt;
+		&amp;lt;/marc:datafield&amp;gt;
+		&amp;lt;marc:datafield tag=&amp;quot;856&amp;quot; ind1=&amp;quot;4&amp;quot; ind2=&amp;quot;0&amp;quot;&amp;gt;
+			&amp;lt;marc:subfield code=&amp;quot;x&amp;quot;&amp;gt;Agentur&amp;lt;/marc:subfield&amp;gt;
+		&amp;lt;/marc:datafield&amp;gt;
+	&amp;lt;/marc:record&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;now:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;	&amp;lt;marc:record type=&amp;quot;Bibliographic&amp;quot;&amp;gt;
+		&amp;lt;marc:leader&amp;gt;00000pam a2200000 c 4500&amp;lt;/marc:leader&amp;gt;
+		&amp;lt;marc:datafield tag=&amp;quot;856&amp;quot; ind1=&amp;quot;4&amp;quot; ind2=&amp;quot;0&amp;quot;&amp;gt;
+			&amp;lt;marc:subfield code=&amp;quot;u&amp;quot;&amp;gt;http://www.video2brain.com/&amp;lt;/mx:subfield&amp;gt;
+			&amp;lt;marc:subfield code=&amp;quot;x&amp;quot;&amp;gt;Agentur&amp;lt;/mx:subfield&amp;gt;
+		&amp;lt;/marc:datafield&amp;gt;
+	&amp;lt;/marc:record&amp;gt;
+`&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It’s now possible to configure what’s a &lt;code class=&quot;language-text&quot;&gt;valuetag (String)&lt;/code&gt; and an &lt;code class=&quot;language-text&quot;&gt;attributemarker (String)&lt;/code&gt; in many XML-related readers and encoders (see the diff of the &lt;a href=&quot;https://github.com/metafacture/metafacture-documentation/compare/metafacture-core-5.2.0...metafacture-core-5.3.1#diff-7fd24f94041ffda2e7eb15c142412b7a526b755259837bc20cdb15fcce46ef1e&quot;&gt;flux-commands.md&lt;/a&gt;).&lt;/p&gt;
+&lt;h3 id=&quot;encoding-json&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#encoding-json&quot; aria-label=&quot;encoding json permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Encoding JSON&lt;/h3&gt;
+&lt;p&gt;The possibilty in morph to serve pass down untreated fields untouched was delimited to
+a nested hierachy of only two. Also, the structure was kind of broken e.g. for JSON.&lt;/p&gt;
+&lt;p&gt;Using the following FLUX:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;quot;testArray.json&amp;quot;
+| open-file
+| as-records
+| decode-json
+| morph(&amp;quot;all.xml&amp;quot;)
+| encode-json(prettyPrinting=&amp;quot;true&amp;quot;)
+| write(&amp;quot;stdout&amp;quot;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;and the morph:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;metamorph xmlns=&amp;quot;http://www.culturegraph.org/metamorph&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;
+	version=&amp;quot;1&amp;quot;&amp;gt;
+	&amp;lt;rules&amp;gt;
+&amp;lt;data source=&amp;quot;_elseNested&amp;quot;/&amp;gt;
+&amp;lt;/rules&amp;gt;
+&amp;lt;/metamorph&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;with this JSON input:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;author&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;@type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Person&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Katja Königstein-Lüdersdorff&quot;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;@type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Person&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Corinna Peters&quot;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;@type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Person&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Oleg Tjulenev&quot;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;@type&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Person&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Claudia Vogeler&quot;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;resulted in:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;1&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;@type&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Person&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Katja Königstein-Lüdersdorff&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;2&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;@type&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Person&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Corinna Peters&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;3&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;@type&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Person&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Oleg Tjulenev&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;4&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;@type&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Person&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Claudia Vogeler&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;With the new release the output is:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;author&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;@type&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Person&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Katja Königstein-Lüdersdorff&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;@type&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Person&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Corinna Peters&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;@type&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Person&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Oleg Tjulenev&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;@type&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Person&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;name&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Claudia Vogeler&quot;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;morph-function-setreplace-with-filemaps&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#morph-function-setreplace-with-filemaps&quot; aria-label=&quot;morph function setreplace with filemaps permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Morph function “setreplace” with filemaps&lt;/h3&gt;
+&lt;p&gt;You can now use the morph function &lt;code class=&quot;language-text&quot;&gt;setreplace&lt;/code&gt; with externals file maps. These maps
+are lists of tabulator separated values (tsv): the first value is, when matched,
+substituted by the second value. You can also leave out a second value resulting in the
+removal of the matched value. Use it like this:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;       ...
+       &amp;lt;rules&amp;gt;
+          &amp;lt;data source=&amp;#39;fieldNameWhereValuesShallBeSubstituded&amp;#39;&amp;gt;
+            &amp;lt;setreplace map=&amp;#39;mapname&amp;#39; /&amp;gt;
+          &amp;lt;/data&amp;gt;
+        &amp;lt;/rules&amp;gt;
+        &amp;lt;maps&amp;gt;
+          &amp;lt;filemap name=&amp;#39;mapname&amp;#39; files=&amp;#39;org/metafacture/metamorph/maps/file-map-test.txt&amp;#39; /&amp;gt;
+        &amp;lt;/maps&amp;gt;
+        ...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;outlook&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#outlook&quot; aria-label=&quot;outlook permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Outlook&lt;/h2&gt;
+&lt;p&gt;We are working on a &lt;a href=&quot;https://librecat.org/Catmandu/#fix-language&quot;&gt;Catmandu like fix language&lt;/a&gt; which can be used instead of the &lt;code class=&quot;language-text&quot;&gt;morph&lt;/code&gt; script.
+Also, there will be a &lt;a href=&quot;https://metafacture.org/playground&quot;&gt;playground&lt;/a&gt;, realized as
+a web app, to play around with data and transformation rules and see the outcome
+immediately. You will be offered to load predefined examples.
+The &lt;code class=&quot;language-text&quot;&gt;playground&lt;/code&gt; comes with the capability to share examples or whole complex
+workflows, with the vision to enable this as a web API for processing data without
+even installing metafacture.&lt;/p&gt;
+&lt;p&gt;Watch out for updates and new blog posts!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[Hello, World!]]></description><link>https://blog.metafacture.org/hello-world/</link><guid isPermaLink="false">https://blog.metafacture.org/hello-world/</guid><pubDate>Mon, 22 Nov 2021 14:52:03 GMT</pubDate><content:encoded>&lt;p&gt;Hello, World!&lt;/p&gt;</content:encoded></item></channel></rss>
